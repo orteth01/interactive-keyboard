@@ -1,0 +1,67 @@
+
+$blackKeyWidth: 50px;
+$keyBorderRadius: 4px;
+$whiteKeyBorder: 1px solid black;
+
+.keyboardWrapper {
+  display: flex;
+}
+
+%key {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  border-bottom-left-radius: $keyBorderRadius;
+  border-bottom-right-radius: $keyBorderRadius;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.whiteKey {
+  @extend %key;
+
+  width: 70px;
+  height: 300px;
+  font-size: 60px;
+
+  border-left: $whiteKeyBorder;
+  border-bottom: $whiteKeyBorder;
+  &:last-child {
+    border-right: $whiteKeyBorder;
+  }
+
+  box-shadow: 0 1px 1px black;
+  &.highlightedKey {
+    background-color: yellow;
+    box-shadow: none;
+  }
+}
+
+.blackKey {
+  @extend %key;
+  z-index: 1;
+
+  width: $blackKeyWidth;
+  height: 175px;
+  font-size: 30px;
+
+  margin-left: -$blackKeyWidth;
+  transform: translateX(50%);
+
+  color: white;
+  background-color: black;
+
+  box-shadow: 0 1px 1px #4c4c4c;
+
+  &.highlightedKey {
+    background-color: orange;
+    box-shadow: none;
+  }
+}
+
+.disabled {
+  cursor: default;
+}

@@ -1,0 +1,36 @@
+.wrapper {
+  width: 490px;
+}
+
+.invalidInputError {
+  font-size: 10px;
+  color: red;
+  margin: 0;
+}
+
+.playKeysInput {
+  margin-top: 4px;
+  width: 100%;
+  padding: 4px;
+}
+
+.playButton {
+  width: 100px;
+  margin-top: 4px;
+  padding: 4px 0;
+
+  background-color: #4CAF50;
+  color: white;
+
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+}
